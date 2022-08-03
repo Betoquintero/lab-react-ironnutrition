@@ -1,9 +1,12 @@
-import React from 'react'
-import { Card, Col, Button } from 'antd';
+import React  from 'react';
+
+import { Card, Col, Button } from 'antd';   
 
 // Iteration 2
 function FoodBox(props) {
-    const {food} = props
+    const {food, onDelete} = props
+
+
   return (
     <div  >
         {food.map(elem => {
@@ -20,7 +23,7 @@ function FoodBox(props) {
                     <p>
                     <b>Total Calories: {elem.calories}*{elem.servings} </b> kcal
                     </p>
-                    <Button type="primary"> Delete </Button>
+                    <Button type="primary" onClick={() => onDelete(elem.name)}> Delete </Button>
                 </Card>
                 </Col>
                 )
